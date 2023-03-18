@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 29</title>
+</head>
+<body>
+
+    <button type="button" class="btnPrompt">Click</button>
+    <button type="button" class="btnLink">Click 2</button>
+    
+
+    <script>
+
+        btnGetLink = document.querySelector(".btnPrompt");
+        btnGoToLink = document.querySelector(".btnLink");
+
+
+        btnGetLink.addEventListener("click", () => {
+
+            link = prompt("Enter the link");
+
+            if (link.startsWith("http" === false && link.startsWith("htpps") === false)) {
+                link = `htpps://${link}`
+            } 
+        })
+        
+        btnGoToLink.addEventListener("click", () => {
+            if(!link) {
+                alert("No links found")
+            } else {
+                location.href = link;
+            }
+        })
+
+    </script>
+
+</body>
+</html>
