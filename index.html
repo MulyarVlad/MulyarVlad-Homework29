@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 29</title>
+</head>
+<body>
+
+    <section class="link1">
+        <button id="btn-http">Click</button>
+    </section>
+    
+    <section class="link2">
+        <button id="btn-https">Click2</button>
+    </section>
+    
+    <script>
+        const btnGoToLink = document.getElementById('btn-http');
+        const btnGoToLink2 = document.getElementById('btn-https');
+    
+        function redirectToLink(link) {
+            if (!link.match(/^https?:\/\//i)) {
+                link = 'https://' + link;
+            }
+            location.href = link;
+        }
+    
+        btnGoToLink.addEventListener('click', () => {
+            const link = prompt('Enter the link without protocol');
+            if (link) {
+                redirectToLink(link);
+            }
+        });
+    
+        btnGoToLink2.addEventListener('click', () => {
+            const link = prompt('Enter the link without protocol');
+            if (link) {
+                redirectToLink('https://' + link);
+            }
+        });
+
+    </script>
+
+</body>
+</html>
